@@ -1,0 +1,1 @@
+web: gunicorn cocina_site.wsgi
