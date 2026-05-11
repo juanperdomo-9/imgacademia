@@ -451,7 +451,7 @@
     /* MAPA */
     .mapa {
         flex: 2;
-        min-width: 300px;
+        min-width: 0px;
         border-radius: 15px;
         overflow: hidden;
         box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -623,6 +623,28 @@
     .btn-cursos:active {
         transform: translateY(0);
         box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    }
+    @media (max-width: 600px) {
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .contacto-info,
+        .mapa,
+        .card,
+        .box {
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .btn-cursos {
+            display: block;
+            width: fit-content;
+            max-width: 90%;
+            margin: 20px auto;
+        }
+
     }
 </style>
 </head>
