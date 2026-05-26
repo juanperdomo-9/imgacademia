@@ -1,89 +1,138 @@
-html
 <!DOCTYPE html>
 {% load static %}
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
-    <title>IMG Academia</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        IMG Academia
+    </title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
 <style>
 
-:root {
-    --bg: #def2c3;
-    --primary: #5f7f5f;
-    --primary-dark: #4a684a;
-    --text: #5f7f5f;
-    --white: #ffffff;
-    --border: rgba(95,127,95,0.10);
+:root{
+    --bg:#def2c3;
+    --primary:#5f7f5f;
+    --primary-dark:#4a684a;
+    --text:#5f7f5f;
+    --white:#ffffff;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    overflow-x: hidden;
+body{
+    font-family:Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
 }
 
-img {
-    width: 100%;
-    display: block;
+img{
+    width:100%;
+    display:block;
 }
 
-section {
-    position: relative;
+section{
+    position:relative;
+}
+
+.seccion-separada{
+    position:relative;
+    padding:90px 20px;
+}
+
+.seccion-separada::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:min(92%,1200px);
+    height:1px;
+
+    background:
+    linear-gradient(
+        to right,
+        transparent,
+        rgba(95,127,95,.18),
+        transparent
+    );
 }
 
 /* NAVBAR */
 
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
 
-    backdrop-filter: blur(18px);
-    background: rgba(222,242,195,0.72);
+    backdrop-filter:blur(16px);
 
-    border-bottom: 1px solid rgba(95,127,95,0.08);
+    background:
+    rgba(222,242,195,.72);
+
+    border-bottom:
+    1px solid rgba(95,127,95,.08);
 }
 
-.nav-container {
-    max-width: 1250px;
-    margin: auto;
+.nav-container{
+    max-width:1250px;
+    margin:auto;
 
-    padding: 18px 24px;
+    padding:18px 24px;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
-.nav-logo img {
-    height: 42px;
+.nav-logo img{
+    height:42px;
 }
 
-.nav-btn {
-    text-decoration: none;
+.nav-btn{
+    text-decoration:none;
 
-    background: rgba(95,127,95,0.92);
-    color: white;
+    background:var(--primary);
+    color:white;
 
-    padding: 12px 20px;
+    padding:13px 20px;
 
-    border-radius: 999px;
+    border-radius:999px;
 
-    font-size: 14px;
-    font-weight: 600;
+    font-size:14px;
+    font-weight:700;
 
     transition:
     transform .7s cubic-bezier(.16,1,.3,1),
@@ -91,329 +140,318 @@ section {
     background .7s cubic-bezier(.16,1,.3,1);
 
     box-shadow:
-    0 10px 30px rgba(95,127,95,0.18);
+    0 10px 30px rgba(95,127,95,.16);
 }
 
-.nav-btn:hover {
-    transform: translateY(-3px) scale(1.02);
+.nav-btn:hover{
+    transform:
+    translateY(-3px);
 
-    background: var(--primary-dark);
+    background:
+    var(--primary-dark);
 
     box-shadow:
-    0 20px 50px rgba(95,127,95,0.22);
+    0 22px 50px rgba(95,127,95,.22);
 }
 
 /* HERO */
 
-.hero {
-    padding: 50px 20px 10px;
+.hero{
+    padding:
+    45px 20px 10px;
 
-    overflow: hidden;
+    overflow:hidden;
 }
 
-.hero-glow {
-    position: absolute;
-    top: -200px;
-    left: 50%;
-    transform: translateX(-50%);
+.hero-glow{
+    position:absolute;
 
-    width: 700px;
-    height: 700px;
+    top:-220px;
+    left:50%;
 
-    background: rgba(95,127,95,0.10);
+    transform:translateX(-50%);
 
-    border-radius: 999px;
+    width:700px;
+    height:700px;
 
-    filter: blur(100px);
-
-    pointer-events: none;
-}
-
-.hero-banner {
-    position: relative;
-
-    max-width: 1180px;
-
-    margin: auto;
-
-    overflow: hidden;
-
-    border-radius: 34px;uto auto 70px;
-
-    text-align: center;
-}
-
-.section-badge {
-    display: inline-flex;
-    al.hero-banner img {
-    border-radius: 34px;ter;
-
-    padding: 10px 18px;
-
-    border-radius: 999px;
-
-    border: 1px solid rgba(95,127,95,0.08);
-
-    background: rgba(255,255,255,0.52);
-
-    backdrop-filter: blur(1.seccion-separada {
-    position: relative;
-
-    padding: 90px 20px;ng: .seccion-separada::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: min(92%, 1180px);
-    height: 1px;
+    border-radius:999px;
 
     background:
-    linear-gradient(
-        to right,
-        transparent,
-        rgba(95,127,95,0.18),
-        transparent
-    );
+    rgba(95,127,95,.10);
+
+    filter:blur(100px);
+
+    pointer-events:none;
 }
 
-.section-header {ransform: uppercase;
+.hero-banner{
+    position:relative;
 
-    margin-bottom: 24px;
+    max-width:1180px;
+    margin:auto;
+
+    overflow:hidden;
+
+    border-radius:32px;
 
     box-shadow:
-    0 8px 30px rgba(0,0,0,0.04);
+    0 30px 90px rgba(0,0,0,.08),
+    0 10px 30px rgba(95,127,95,.08);
+}
+
+.hero-banner img{
+    border-radius:32px;
+
+    transition:
+    transform 2s cubic-bezier(.16,1,.3,1);
+}
+
+.hero-banner:hover img{
+    transform:scale(1.015);
+}
+
+/* TYPO */
+
+.section-header{
+    max-width:900px;
+    margin:auto auto 65px;
+
+    text-align:center;
+}
+
+.section-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:
+    rgba(255,255,255,.45);
+
+    border:
+    1px solid rgba(95,127,95,.08);
+
+    backdrop-filter:blur(10px);
+
+    margin-bottom:24px;
+
+    font-size:11px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.18em;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.04);
 }
 
 .section-header h2,
-.sobre-texto h2 {
-    font-size: clamp(38px, 6vw, 72px);
+.sobre-texto h2{
+    font-size:
+    clamp(38px,6vw,72px);
 
-    line-height: .95;
+    line-height:.95;
 
-    letter-spacing: -0.06em;
+    letter-spacing:-.06em;
 
-    color: var(--primary);
+    color:var(--primary);
 
-    margin-bottom: 24px;
+    margin-bottom:24px;
 }
 
 .section-header p,
-.sobre-texto p {
-    font-size: 17px;
-    line-height: 1.9;
+.sobre-texto p{
+    font-size:17px;
 
-    max-width: 760px;
+    line-height:1.9;
 
-    margin: auto;
-
-    color: var(--text);
+    color:var(--text);
 }
 
-.intro {
-    font-size: 22px !important;
-
-    line-height: 1.6 !important;
-
-    margin-bottom: 24px !important;
+.intro{
+    font-size:22px !important;
+    line-height:1.6 !important;
+    margin-bottom:24px !important;
 }
 
 /* SOBRE */
 
-.sobre-container {
-    max-width: 1150px;
-    margin: auto;
+.sobre-container{
+    max-width:1150px;
+    margin:auto;
 }
 
-.sobre-texto {
-    max-width: 850px;
-    margin: auto;
-    text-align: center;
+.sobre-texto{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
 }
 
-.sobre-boxes {
-    margin-top: 60px;
+.sobre-boxes{
+    margin-top:60px;
 
-    display: flex;
-    justify-content: center;
+    display:flex;
+    justify-content:center;
 }
 
-.box {
-    position: relative;
+.box{
+    width:100%;
+    max-width:560px;
 
-    overflow: hidden;
+    padding:50px;
 
-    max-width: 560px;
-    width: 100%;
+    border-radius:32px;
 
-    padding: 50px;
-
-    border-radius: 32px;
+    overflow:hidden;
 
     background:
     linear-gradient(
         180deg,
-        rgba(95,127,95,0.98) 0%,
-        rgba(74,104,74,1) 100%
+        rgba(95,127,95,.98),
+        rgba(74,104,74,1)
     );
 
-    color: white;
-
-    box-shadow:
-    0 30px 80px rgba(0,0,0,0.10),
-    0 8px 30px rgba(95,127,95,0.08);
+    color:white;
 
     transition:
     transform .8s cubic-bezier(.16,1,.3,1),
     box-shadow .8s cubic-bezier(.16,1,.3,1);
 
-    opacity: 0;
-    transform: translateY(50px) scale(.98);
-
-    filter: blur(10px);
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.10),
+    0 10px 30px rgba(95,127,95,.08);
 }
 
-.box.show {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0px);
-}
-
-.box:hover {
-    transform: translateY(-8px) scale(1.01);
+.box:hover{
+    transform:
+    translateY(-6px)
+    scale(1.01);
 
     box-shadow:
-    0 40px 120px rgba(0,0,0,0.12),
-    0 10px 40px rgba(95,127,95,0.10);
+    0 40px 120px rgba(0,0,0,.12),
+    0 10px 40px rgba(95,127,95,.10);
 }
 
-.box-icon {
-    width: 68px;
-    height: 68px;
+.box-icon{
+    width:68px;
+    height:68px;
 
-    border-radius: 999px;
+    margin:auto auto 24px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius:999px;
 
-    margin: auto auto 24px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-    background: rgba(255,255,255,0.12);
+    background:
+    rgba(255,255,255,.12);
 
-    font-size: 24px;
+    font-size:24px;
 }
 
-.box h3 {
-    font-size: 34px;
+.box h3{
+    font-size:34px;
 
-    margin-bottom: 18px;
+    margin-bottom:18px;
 
-    letter-spacing: -0.05em;
+    letter-spacing:-.05em;
 }
 
-.box p {
-    color: rgba(255,255,255,0.82);
-
-    line-height: 1.8;
+.box p{
+    line-height:1.8;
+    color:rgba(255,255,255,.84);
 }
 
-.btn-sobre {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.btn-sobre{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
 
-    margin-top: 28px;
+    margin-top:28px;
 
-    padding: 14px 22px;
+    padding:14px 22px;
 
-    border-radius: 999px;
+    border-radius:999px;
 
-    text-decoration: none;
+    background:var(--bg);
+    color:var(--primary);
 
-    background: var(--bg);
-    color: var(--primary);
+    text-decoration:none;
 
-    font-size: 14px;
-    font-weight: 700;
+    font-size:14px;
+    font-weight:700;
 
     transition:
     transform .7s cubic-bezier(.16,1,.3,1),
     box-shadow .7s cubic-bezier(.16,1,.3,1);
 }
 
-.btn-sobre:hover {
-    transform: translateY(-3px);
+.btn-sobre:hover{
+    transform:
+    translateY(-3px);
 
     box-shadow:
-    0 20px 50px rgba(0,0,0,0.12);
+    0 20px 50px rgba(0,0,0,.12);
 }
 
 /* CURSOS INFO */
 
-.cursos-lista {
-    max-width: 900px;
-    margin: auto;
+.cursos-lista{
+    max-width:900px;
+    margin:auto;
 
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
 }
 
-.item {
-    padding: 22px 24px;
+.item{
+    padding:22px 24px;
 
-    border-radius: 24px;
+    border-radius:24px;
 
-    background: rgba(255,255,255,0.58);
+    background:
+    rgba(255,255,255,.56);
 
-    backdrop-filter: blur(14px);
+    border:
+    1px solid rgba(255,255,255,.24);
 
-    border: 1px solid rgba(255,255,255,0.24);
-
-    font-size: 16px;
+    backdrop-filter:blur(12px);
 
     transition:
     transform .7s cubic-bezier(.16,1,.3,1),
     box-shadow .7s cubic-bezier(.16,1,.3,1),
     background .7s cubic-bezier(.16,1,.3,1);
 
-    opacity: 0;
-    transform: translateY(40px);
-    filter: blur(8px);
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.03);
 }
 
-.item.show {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0px);
-}
+.item:hover{
+    transform:
+    translateY(-4px);
 
-.item:hover {
-    transform: translateY(-4px);
-
-    background: rgba(255,255,255,0.75);
+    background:
+    rgba(255,255,255,.72);
 
     box-shadow:
-    0 20px 60px rgba(0,0,0,0.06);
+    0 20px 60px rgba(0,0,0,.06);
 }
 
-.btn-cursos {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.btn-cursos{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
 
-    margin: 40px auto 0;
+    margin:42px auto 0;
 
-    padding: 14px 22px;
+    padding:14px 22px;
 
-    border-radius: 999px;
-
-    text-decoration: none;
+    border-radius:999px;
 
     background:
     linear-gradient(
@@ -422,159 +460,158 @@ section {
         #7fa37f
     );
 
-    color: white;
+    color:white;
 
-    font-size: 13px;
-    font-weight: 700;
+    text-decoration:none;
 
-    letter-spacing: .06em;
+    font-size:13px;
+    font-weight:700;
+
+    letter-spacing:.06em;
 
     transition:
     transform .7s cubic-bezier(.16,1,.3,1),
     box-shadow .7s cubic-bezier(.16,1,.3,1);
 
     box-shadow:
-    0 20px 50px rgba(95,127,95,0.20);
+    0 18px 40px rgba(95,127,95,.20);
 }
 
-.btn-cursos:hover {
-    transform: translateY(-4px) scale(1.02);
+.btn-cursos:hover{
+    transform:
+    translateY(-4px)
+    scale(1.02);
 
     box-shadow:
-    0 30px 70px rgba(95,127,95,0.28);
+    0 28px 70px rgba(95,127,95,.28);
 }
 
-.cursos-info img {
-    max-width: 820px;
+.cursos-info img{
+    max-width:820px;
 
-    margin: 70px auto 0;
+    margin:70px auto 0;
 
-    border-radius: 28px;
+    border-radius:28px;
 
     box-shadow:
-    0 30px 90px rgba(0,0,0,0.08);
+    0 30px 90px rgba(0,0,0,.08);
 }
 
 /* GALERIA */
 
-.galeria-grid {
-    max-width: 1280px;
-    margin: auto;
+.galeria-grid{
+    max-width:1280px;
+    margin:auto;
 
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
+    display:grid;
+    grid-template-columns:
+    repeat(3,1fr);
 
-    gap: 32px;
+    gap:32px;
 }
 
-.galeria-card {
-    position: relative;
+.galeria-card{
+    position:relative;
 
-    overflow: hidden;
+    overflow:hidden;
 
-    border-radius: 34px;
+    border-radius:34px;
 
-    background: rgba(255,255,255,0.50);
+    background:
+    rgba(255,255,255,.45);
 
-    border: 1px solid rgba(255,255,255,0.20);
-
-    backdrop-filter: blur(14px);
-
-    box-shadow:
-    0 20px 60px rgba(0,0,0,0.06);
+    border:
+    1px solid rgba(255,255,255,.16);
 
     transition:
     transform .8s cubic-bezier(.16,1,.3,1),
     box-shadow .8s cubic-bezier(.16,1,.3,1);
 
-    opacity: 0;
-    transform: translateY(60px) scale(.985);
-
-    filter: blur(8px);
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.06);
 }
 
-.galeria-card.show {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0px);
-}
-
-.galeria-card:hover {
-    transform: translateY(-8px) scale(1.01);
+.galeria-card:hover{
+    transform:
+    translateY(-8px)
+    scale(1.01);
 
     box-shadow:
-    0 40px 120px rgba(0,0,0,0.10),
-    0 8px 30px rgba(95,127,95,0.08);
+    0 40px 120px rgba(0,0,0,.10),
+    0 8px 30px rgba(95,127,95,.08);
 }
 
-.galeria-card img {
-    height: 320px;
-    object-fit: cover;
+.galeria-card img{
+    height:320px;
+    object-fit:cover;
 
-    transition: transform 1.4s cubic-bezier(.16,1,.3,1);
+    transition:
+    transform 1.5s cubic-bezier(.16,1,.3,1);
 }
 
-.galeria-card:hover img {
-    transform: scale(1.06);
+.galeria-card:hover img{
+    transform:scale(1.06);
 }
 
-.galeria-overlay {
-    position: absolute;
-    inset: 0;
+.galeria-overlay{
+    position:absolute;
+    inset:0;
 
     background:
     linear-gradient(
         to top,
-        rgba(0,0,0,0.58),
-        rgba(0,0,0,0.10)
+        rgba(0,0,0,.58),
+        rgba(0,0,0,.10)
     );
 }
 
-.galeria-info {
-    position: absolute;
-    inset: 0;
+.galeria-info{
+    position:absolute;
+    inset:0;
 
-    padding: 28px;
+    padding:28px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    align-items:flex-start;
 }
 
-.galeria-info h3 {
-    color: white;
+.galeria-info h3{
+    color:white;
 
-    font-size: 32px;
+    font-size:32px;
 
-    line-height: 1;
+    line-height:1;
 
-    letter-spacing: -0.05em;
+    letter-spacing:-.05em;
 
-    margin-bottom: 18px;
+    margin-bottom:18px;
 }
 
-.btn-galeria {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.btn-galeria{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
 
-    padding: 12px 18px;
+    padding:12px 18px;
 
-    border-radius: 999px;
+    border-radius:999px;
 
-    background: rgba(255,255,255,0.18);
+    background:
+    rgba(255,255,255,.16);
 
-    backdrop-filter: blur(12px);
+    backdrop-filter:blur(10px);
 
-    border: 1px solid rgba(255,255,255,0.16);
+    border:
+    1px solid rgba(255,255,255,.16);
 
-    color: white;
+    color:white;
 
-    text-decoration: none;
+    text-decoration:none;
 
-    font-size: 13px;
-    font-weight: 700;
+    font-size:13px;
+    font-weight:700;
 
     transition:
     transform .7s cubic-bezier(.16,1,.3,1),
@@ -582,272 +619,297 @@ section {
     box-shadow .7s cubic-bezier(.16,1,.3,1);
 }
 
-.btn-galeria:hover {
-    transform: translateY(-3px);
+.btn-galeria:hover{
+    transform:
+    translateY(-3px);
 
-    background: rgba(255,255,255,0.26);
+    background:
+    rgba(255,255,255,.26);
 
     box-shadow:
-    0 20px 50px rgba(0,0,0,0.12);
+    0 20px 50px rgba(0,0,0,.12);
 }
 
 /* CONTACTO */
 
-.contacto {
+.contacto{
     background:
-    linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.58)),
-    url("{% static 'local.png' %}") center/cover no-repeat;
+    linear-gradient(
+        rgba(0,0,0,.58),
+        rgba(0,0,0,.58)
+    ),
+    url("{% static 'local.png' %}")
+    center/cover no-repeat;
 }
 
 .contacto .section-header h2,
-.contacto .section-badge {
-    color: white;
+.contacto .section-badge{
+    color:white;
 }
 
-.contacto-container {
-    max-width: 1300px;
-    margin: auto;
+.contacto-container{
+    max-width:1300px;
+    margin:auto;
 
-    display: grid;
-    grid-template-columns: 1.6fr .8fr;
+    display:grid;
+    grid-template-columns:
+    1.6fr .8fr;
 
-    gap: 32px;
+    gap:32px;
 }
 
 .mapa,
-.contacto-info {
-    overflow: hidden;
+.contacto-info{
+    overflow:hidden;
 
-    border-radius: 34px;
+    border-radius:34px;
 
-    background: rgba(255,255,255,0.12);
+    background:
+    rgba(255,255,255,.12);
 
-    backdrop-filter: blur(18px);
+    backdrop-filter:blur(18px);
 
-    border: 1px solid rgba(255,255,255,0.10);
+    border:
+    1px solid rgba(255,255,255,.10);
 
     box-shadow:
-    0 20px 60px rgba(0,0,0,0.18);
+    0 20px 60px rgba(0,0,0,.18);
 }
 
-.mapa iframe {
-    width: 100%;
-    height: 100%;
-    min-height: 480px;
-    border: 0;
+.mapa iframe{
+    width:100%;
+    height:100%;
+    min-height:480px;
+    border:0;
 }
 
-.contacto-info {
-    padding: 36px;
+.contacto-info{
+    padding:36px;
 
-    color: white;
+    color:white;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 
-    gap: 20px;
+    gap:20px;
 }
 
-.contact-item {
-    display: flex;
-    align-items: center;
+.contact-item{
+    display:flex;
+    align-items:center;
 
-    gap: 14px;
+    gap:14px;
 
-    font-size: 16px;
+    font-size:16px;
 }
 
-.contacto-botones {
-    display: flex;
-    gap: 14px;
+.contacto-botones{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
 
-    margin-top: 16px;
-
-    flex-wrap: wrap;
+    margin-top:16px;
 }
 
 .btn-wsp,
-.btn-ig {
-    text-decoration: none;
+.btn-ig{
+    text-decoration:none;
 
-    padding: 14px 18px;
+    padding:14px 18px;
 
-    border-radius: 999px;
+    border-radius:999px;
 
-    font-size: 14px;
-    font-weight: 700;
+    font-size:14px;
+    font-weight:700;
 
     transition:
     transform .7s cubic-bezier(.16,1,.3,1),
     box-shadow .7s cubic-bezier(.16,1,.3,1);
 }
 
-.btn-wsp {
-    background: #25D366;
-    color: white;
+.btn-wsp{
+    background:#25D366;
+    color:white;
 }
 
-.btn-ig {
-    background: #E1306C;
-    color: white;
+.btn-ig{
+    background:#E1306C;
+    color:white;
 }
 
 .btn-wsp:hover,
-.btn-ig:hover {
-    transform: translateY(-3px);
+.btn-ig:hover{
+    transform:
+    translateY(-3px);
 
     box-shadow:
-    0 20px 50px rgba(0,0,0,0.18);
+    0 20px 50px rgba(0,0,0,.18);
 }
 
 /* FOOTER */
 
-.footer {
-    position: relative;
+.footer{
+    background:#5f7f5f;
 
-    overflow: hidden;
+    color:white;
 
-    background:
-    linear-gradient(
-        180deg,
-        #eef6e6 0%,
-        #def2c3 100%
-    );
-
-    border-top: 1px solid rgba(95,127,95,0.08);
-
-    padding: 90px 20px 30px;
+    padding:70px 20px 30px;
 }
 
-.footer-glow {
-    position: absolute;
-    top: -180px;
-    left: 50%;
-    transform: translateX(-50%);
+.footer-container{
+    max-width:1200px;
+    margin:auto;
 
-    width: 420px;
-    height: 420px;
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
 
-    background: rgba(95.footer {
-    position: relative;
+    gap:40px;
+}
 
-    overflow: hidden;
+.footer h3{
+    font-size:34px;
 
-    background: #5f7f5f;
+    margin-bottom:18px;
 
-    color: white;
+    letter-spacing:-.05em;
+}
 
-    padding: 70px 20px 30px;inma.footer-glow {
-    display: none;
-} .22em;
+.footer h4{
+    margin-bottom:18px;
 
-    text-transform: uppercase;
+    font-size:12px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.18em;
+
+    opacity:.72;
 }
 
 .footer p,
-.footer a {
-    color: var(--text);
+.footer a{
+    color:
+    rgba(255,255,255,.82);
 
-    line-height: 1.8;
+    line-height:1.8;
 
-    text-decoration: none;
+    text-decoration:none;
 
-    transition: .3s;
+    transition:.3s;
 }
 
-.footer a:hover {
-    color: black;
+.footer a:hover{
+    color:white;
 }
 
-.footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
 }
 
-.footer-bottom {
-    position: relative;
-    z-index: 2;
+.footer-bottom{
+    max-width:1200px;
 
-    max-width: 1250px;
+    margin:50px auto 0;
 
-    margin: 60px auto 0;
+    padding-top:24px;
 
-    padding-top: 24px;
+    border-top:
+    1px solid rgba(255,255,255,.10);
 
-    border-top: 1px solid rgba(9.footer p,
-.footer a {
-    color: rgba(255,255,255,0.82);y-content: space-between;
+    display:flex;
+    justify-content:space-between;
 
-    gap: 20px;
+    gap:20px;
 
-    flex-wrap: wrap;
+    flex-wrap:wrap;
 }
 
-/* RESPONS.footer a:hover {
-    color: white;
+/* REVEAL */
 
-    .galeria-grid {
-        grid-template-columns: 1fr;
+.reveal{
+    opacity:0;
+    transform:
+    translateY(40px);
+
+    filter:blur(8px);
+
+    transition:
+    1.2s cubic-bezier(.16,1,.3,1);
+}
+
+.reveal.show{
+    opacity:1;
+    transform:
+    translateY(0);
+
+    filter:blur(0px);
+}
+
+/* MOBILE */
+
+@media(max-width:980px){
+
+    .galeria-grid{
+        grid-template-columns:1fr;
     }
 
-    .contacto-container {
-        grid-template-columns: 1fr;
+    .contacto-container{
+        grid-template-columns:1fr;
     }
 
 }
 
-@media (max-width: 768px) {
+@media(max-width:768px){
 
-    .seccion-separada {
-        padding: 90px 20px;
+    .seccion-separada{
+        padding:80px 20px;
     }
 
-    .hero {
-        padding-top: 40px;
+    .hero{
+        padding-top:30px;
     }
 
-    .hero-banner {
-        padding: 14px;
-        border-radius: 26px;
+    .hero-banner,
+    .hero-banner img{
+        border-radius:22px;
     }
 
-    .hero-banner img {
-        border-radius: 18px;
+    .section-header h2,
+    .sobre-texto h2{
+        line-height:1;
     }
 
-    .nav-container {
-        padding: 16px 18px;
+    .box{
+        padding:38px 28px;
     }
 
-    .galeria-info h3 {
-        font-size: 26px;
+    .galeria-info h3{
+        font-size:26px;
     }
 
-    .box {
-        padding: 38px 28px;
-    }
-
-    .item {
-        padding: 20px;
+    .nav-container{
+        padding:16px 18px;
     }
 
 }
 
 </style>
-</head>
-
-<body>
-
 <nav class="navbar">
     <div class="nav-container">
+
+        <!-- LOGO -->
 
         <div class="nav-logo">
             <a href="#">
                 <img src="{% static 'horizontal.png' %}" alt="logo">
             </a>
         </div>
+
+        <!-- CTA -->
 
         <a href="https://wa.me/542214093007" class="nav-btn" target="_blank">
             Contactar
@@ -858,19 +920,23 @@ section {
 
 <section class="hero">
 
+    <!-- GLOW -->
+
     <div class="hero-glow"></div>
 
     <div class="hero-banner">
+
         <img src="{% static 'horizontal.png' %}" alt="logo">
+
     </div>
 
 </section>
 
-<section class="sobre seccion-separada">
+<section class="sobre seccion-separada reveal">
 
     <div class="sobre-container">
 
-        <div class="sobre-texto reveal">
+        <div class="sobre-texto">
 
             <div class="section-badge">
                 Academia gastronómica
@@ -887,16 +953,18 @@ section {
             </p>
 
             <p>
-                Nacimos hace 13 años como una academia más tradicional y,
-                con el tiempo, fuimos transformándonos.
-                Hoy proponemos una cocina más cercana, flexible y actual.
+                Nacimos hace 13 años como una academia más tradicional
+                y, con el tiempo, fuimos transformándonos. Hoy proponemos
+                una cocina más cercana, flexible y actual, adaptada a lo
+                que las personas buscan: experiencias reales, prácticas
+                y accesibles.
             </p>
 
         </div>
 
         <div class="sobre-boxes">
 
-            <div class="box reveal-card">
+            <div class="box unica">
 
                 <div class="box-icon">
                     ✦
@@ -927,9 +995,9 @@ section {
 
 </section>
 
-<section class="cursos-info seccion-separada">
+<section class="cursos-info seccion-separada reveal">
 
-    <div class="section-header reveal">
+    <div class="section-header">
 
         <div class="section-badge">
             Experiencia
@@ -944,31 +1012,31 @@ section {
 
     <div class="cursos-lista">
 
-        <div class="item reveal-item">
+        <div class="item">
             Recetas explicadas paso a paso.
         </div>
 
-        <div class="item reveal-item">
+        <div class="item">
             Todas las materias incluidas.
         </div>
 
-        <div class="item reveal-item">
+        <div class="item">
             Trato cálido desde el primer contacto.
         </div>
 
-        <div class="item reveal-item">
+        <div class="item">
             Experiencias grupales reales.
         </div>
 
-        <div class="item reveal-item">
+        <div class="item">
             Acompañamiento personalizado.
         </div>
 
-        <div class="item reveal-item">
+        <div class="item">
             La cocina como punto de encuentro.
         </div>
 
-        <div class="item reveal-item">
+        <div class="item">
             Degustación al final de cada clase.
         </div>
 
@@ -982,9 +1050,9 @@ section {
 
 </section>
 
-<section id="cursos" class="galeria-cursos seccion-separada">
+<section id="cursos" class="galeria-cursos seccion-separada reveal">
 
-    <div class="section-header reveal">
+    <div class="section-header">
 
         <div class="section-badge">
             Cursos
@@ -998,7 +1066,9 @@ section {
 
     <div class="galeria-grid">
 
-        <div class="galeria-card reveal-card">
+        <!-- CARD -->
+
+        <div class="galeria-card">
 
             <img src="{% static 'ñoquis.jpeg' %}" alt="">
 
@@ -1021,7 +1091,9 @@ section {
 
         </div>
 
-        <div class="galeria-card reveal-card">
+        <!-- CARD -->
+
+        <div class="galeria-card">
 
             <img src="{% static 'peña.jpeg' %}" alt="">
 
@@ -1044,29 +1116,9 @@ section {
 
         </div>
 
-        <div class="galeria-card reveal-card">
+        <!-- CARD -->
 
-            <img src="{% static 'iniciacion.jpeg' %}" alt="">
-
-            <div class="galeria-overlay"></div>
-
-            <div class="galeria-info">
-
-                <h3>
-                    Iniciacion a la gastronomía|
-                </h3>
-
-                <a
-                    href="https://webdisponible.my.canva.site/taller-8"
-                    class="btn-galeria"
-                >
-                    Ver curso
-                </a>
-
-            </div>
-
-        </div>
-        <div class="galeria-card reveal-card">
+        <div class="galeria-card">
 
             <img src="{% static 'arabe.jpeg' %}" alt="">
 
@@ -1075,7 +1127,7 @@ section {
             <div class="galeria-info">
 
                 <h3>
-                    Cocina árabe
+                    Cocina del mundo
                 </h3>
 
                 <a
@@ -1088,29 +1140,10 @@ section {
             </div>
 
         </div>
-        <div class="galeria-card reveal-card">
 
-            <img src="{% static 'sintacc.jpeg' %}" alt="">
+        <!-- NUEVOS CURSOS -->
 
-            <div class="galeria-overlay"></div>
-
-            <div class="galeria-info">
-
-                <h3>
-                    Taller sin TACC
-                </h3>
-
-                <a
-                    href="https://webdisponible.my.canva.site/taller-3"
-                    class="btn-galeria"
-                >
-                    Ver curso
-                </a>
-
-            </div>
-
-        </div>
-        <div class="galeria-card reveal-card">
+        <div class="galeria-card">
 
             <img src="{% static 'saludable.jpeg' %}" alt="">
 
@@ -1132,20 +1165,21 @@ section {
             </div>
 
         </div>
-        <div class="galeria-card reveal-card">
 
-            <img src="{% static 'sushi.jpeg' %}" alt="">
+        <div class="galeria-card">
+
+            <img src="{% static 'iniciacion.jpeg' %}" alt="">
 
             <div class="galeria-overlay"></div>
 
             <div class="galeria-info">
 
                 <h3>
-                    Taller de sushi
+                    Iniciación a la gastronomía
                 </h3>
 
                 <a
-                    href="https://webdisponible.my.canva.site/taller5"
+                    href="https://webdisponible.my.canva.site/taller-8"
                     class="btn-galeria"
                 >
                     Ver curso
@@ -1154,29 +1188,8 @@ section {
             </div>
 
         </div>
-            <div class="galeria-card reveal-card">
 
-            <img src="{% static 'pastas.jpeg' %}" alt="">
-
-            <div class="galeria-overlay"></div>
-
-            <div class="galeria-info">
-
-                <h3>
-                    Curso de pastas
-                </h3>
-
-                <a
-                    href="https://webdisponible.my.canva.site/taller-6"
-                    class="btn-galeria"
-                >
-                    Ver curso
-                </a>
-
-            </div>
-
-        </div>
-        <div class="galeria-card reveal-card">
+        <div class="galeria-card">
 
             <img src="{% static 'vino.jpeg' %}" alt="">
 
@@ -1198,13 +1211,83 @@ section {
             </div>
 
         </div>
+
+        <div class="galeria-card">
+
+            <img src="{% static 'sushi.jpeg' %}" alt="">
+
+            <div class="galeria-overlay"></div>
+
+            <div class="galeria-info">
+
+                <h3>
+                    Taller de sushi
+                </h3>
+
+                <a
+                    href="https://webdisponible.my.canva.site/taller-5"
+                    class="btn-galeria"
+                >
+                    Ver curso
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="galeria-card">
+
+            <img src="{% static 'pastas.jpeg' %}" alt="">
+
+            <div class="galeria-overlay"></div>
+
+            <div class="galeria-info">
+
+                <h3>
+                    Curso de pastas
+                </h3>
+
+                <a
+                    href="https://webdisponible.my.canva.site/taller-6"
+                    class="btn-galeria"
+                >
+                    Ver curso
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="galeria-card">
+
+            <img src="{% static 'sintacc.jpeg' %}" alt="">
+
+            <div class="galeria-overlay"></div>
+
+            <div class="galeria-info">
+
+                <h3>
+                    Taller sin TACC
+                </h3>
+
+                <a
+                    href="https://webdisponible.my.canva.site/taller-3"
+                    class="btn-galeria"
+                >
+                    Ver curso
+                </a>
+
+            </div>
+
+        </div>
+
     </div>
 
 </section>
 
-<section class="contacto seccion-separada">
+<section class="contacto seccion-separada reveal">
 
-    <div class="section-header reveal">
+    <div class="section-header">
 
         <div class="section-badge">
             Contacto
@@ -1218,9 +1301,11 @@ section {
 
     <div class="contacto-container">
 
-        <div class="mapa reveal-card">
+        <!-- MAP -->
 
-            <iframe
+        <div class="mapa">
+
+            <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.605491513043!2d-57.9346347!3d-34.916348600000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e61990a84ccd%3A0x861e68c2edc635d3!2sIMG%20ACADEMIA%20CULINARIA%20ARGENTINA!5e0!3m2!1ses!2sar!4v1777053356396!5m2!1ses!2sar"
                 allowfullscreen=""
                 loading="lazy">
@@ -1228,7 +1313,9 @@ section {
 
         </div>
 
-        <div class="contacto-info reveal-card">
+        <!-- INFO -->
+
+        <div class="contacto-info">
 
             <div class="contact-item">
                 <span>📍</span>
@@ -1267,8 +1354,6 @@ section {
 </section>
 
 <footer class="footer">
-
-    <div class="footer-glow"></div>
 
     <div class="footer-container">
 
@@ -1317,6 +1402,7 @@ section {
             </h4>
 
             <p>
+
                 Diseño y desarrollo realizado por
 
                 <a
@@ -1345,35 +1431,28 @@ section {
     </div>
 
 </footer>
-
 <script>
 
-const revealElements = document.querySelectorAll(
-    '.reveal, .reveal-card, .reveal-item'
-);
+const reveals = document.querySelectorAll('.reveal');
 
 const observer = new IntersectionObserver((entries) => {
 
-    entries.forEach((entry, index) => {
+    entries.forEach((entry,index) => {
 
-        if (entry.isIntersecting) {
+        if(entry.isIntersecting){
 
             setTimeout(() => {
                 entry.target.classList.add('show');
-            }, index * 80);
+            }, index * 70);
 
         }
 
     });
 
-}, {
-    threshold: 0.15
+},{
+    threshold:.14
 });
 
-revealElements.forEach((el) => observer.observe(el));
+reveals.forEach(el => observer.observe(el));
 
 </script>
-
-</body>
-</html>
-
