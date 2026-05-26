@@ -1,5 +1,3 @@
-# Premium Refactor — index.html
-
 html
 <!DOCTYPE html>
 {% load static %}
@@ -108,7 +106,7 @@ section {
 /* HERO */
 
 .hero {
-    padding: 70px 20px 30px;
+    padding: 50px 20px 10px;
 
     overflow: hidden;
 }
@@ -134,54 +132,21 @@ section {
 .hero-banner {
     position: relative;
 
-    max-width: 1150px;
+    max-width: 1180px;
 
     margin: auto;
 
-    padding: 26px;
+    overflow: hidden;
 
-    border-radius: 34px;
-
-    background: rgba(255,255,255,0.30);
-
-    border: 1px solid rgba(255,255,255,0.25);
-
-    backdrop-filter: blur(20px);
-
-    box-shadow:
-    0 30px 80px rgba(0,0,0,0.08),
-    0 8px 30px rgba(95,127,95,0.06);
-}
-
-.hero-banner img {
-    border-radius: 24px;
-
-    filter: brightness(.97);
-
-    transition: transform 1.8s cubic-bezier(.16,1,.3,1);
-}
-
-.hero-banner:hover img {
-    transform: scale(1.015);
-}
-
-/* SECTION SYSTEM */
-
-.seccion-separada {
-    padding: 120px 20px;
-}
-
-.section-header {
-    max-width: 900px;
-    margin: auto auto 70px;
+    border-radius: 34px;uto auto 70px;
 
     text-align: center;
 }
 
 .section-badge {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    al.hero-banner img {
+    border-radius: 34px;ter;
 
     padding: 10px 18px;
 
@@ -191,11 +156,32 @@ section {
 
     background: rgba(255,255,255,0.52);
 
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(1.seccion-separada {
+    position: relative;
 
-    font-size: 11px;
-    letter-spacing: .18em;
-    text-transform: uppercase;
+    padding: 90px 20px;ng: .seccion-separada::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(92%, 1180px);
+    height: 1px;
+
+    background:
+    linear-gradient(
+        to right,
+        transparent,
+        rgba(95,127,95,0.18),
+        transparent
+    );
+}
+
+.section-header {ransform: uppercase;
 
     margin-bottom: 24px;
 
@@ -743,42 +729,18 @@ section {
     width: 420px;
     height: 420px;
 
-    background: rgba(95,127,95,0.08);
-
-    border-radius: 999px;
-
-    filter: blur(100px);
-}
-
-.footer-container {
+    background: rgba(95.footer {
     position: relative;
-    z-index: 2;
 
-    max-width: 1250px;
-    margin: auto;
+    overflow: hidden;
 
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    background: #5f7f5f;
 
-    gap: 50px;
-}
+    color: white;
 
-.footer h3 {
-    font-size: 34px;
-
-    margin-bottom: 18px;
-
-    color: var(--primary);
-
-    letter-spacing: -0.05em;
-}
-
-.footer h4 {
-    margin-bottom: 18px;
-
-    font-size: 12px;
-
-    letter-spacing: .22em;
+    padding: 70px 20px 30px;inma.footer-glow {
+    display: none;
+} .22em;
 
     text-transform: uppercase;
 }
@@ -814,19 +776,17 @@ section {
 
     padding-top: 24px;
 
-    border-top: 1px solid rgba(95,127,95,0.10);
-
-    display: flex;
-    justify-content: space-between;
+    border-top: 1px solid rgba(9.footer p,
+.footer a {
+    color: rgba(255,255,255,0.82);y-content: space-between;
 
     gap: 20px;
 
     flex-wrap: wrap;
 }
 
-/* RESPONSIVE */
-
-@media (max-width: 980px) {
+/* RESPONS.footer a:hover {
+    color: white;
 
     .galeria-grid {
         grid-template-columns: 1fr;
@@ -1086,6 +1046,28 @@ section {
 
         <div class="galeria-card reveal-card">
 
+            <img src="{% static 'iniciacion.jpeg' %}" alt="">
+
+            <div class="galeria-overlay"></div>
+
+            <div class="galeria-info">
+
+                <h3>
+                    Iniciacion a la gastronomía|
+                </h3>
+
+                <a
+                    href="https://webdisponible.my.canva.site/taller-8"
+                    class="btn-galeria"
+                >
+                    Ver curso
+                </a>
+
+            </div>
+
+        </div>
+        <div class="galeria-card reveal-card">
+
             <img src="{% static 'arabe.jpeg' %}" alt="">
 
             <div class="galeria-overlay"></div>
@@ -1093,7 +1075,7 @@ section {
             <div class="galeria-info">
 
                 <h3>
-                    Cocina del mundo
+                    Cocina árabe
                 </h3>
 
                 <a
@@ -1106,7 +1088,116 @@ section {
             </div>
 
         </div>
+        <div class="galeria-card reveal-card">
 
+            <img src="{% static 'sintacc.jpeg' %}" alt="">
+
+            <div class="galeria-overlay"></div>
+
+            <div class="galeria-info">
+
+                <h3>
+                    Taller sin TACC
+                </h3>
+
+                <a
+                    href="https://webdisponible.my.canva.site/taller-3"
+                    class="btn-galeria"
+                >
+                    Ver curso
+                </a>
+
+            </div>
+
+        </div>
+        <div class="galeria-card reveal-card">
+
+            <img src="{% static 'saludable.jpeg' %}" alt="">
+
+            <div class="galeria-overlay"></div>
+
+            <div class="galeria-info">
+
+                <h3>
+                    Cocina saludable
+                </h3>
+
+                <a
+                    href="https://webdisponible.my.canva.site/taller-4"
+                    class="btn-galeria"
+                >
+                    Ver curso
+                </a>
+
+            </div>
+
+        </div>
+        <div class="galeria-card reveal-card">
+
+            <img src="{% static 'sushi.jpeg' %}" alt="">
+
+            <div class="galeria-overlay"></div>
+
+            <div class="galeria-info">
+
+                <h3>
+                    Taller de sushi
+                </h3>
+
+                <a
+                    href="https://webdisponible.my.canva.site/taller5"
+                    class="btn-galeria"
+                >
+                    Ver curso
+                </a>
+
+            </div>
+
+        </div>
+            <div class="galeria-card reveal-card">
+
+            <img src="{% static 'pastas.jpeg' %}" alt="">
+
+            <div class="galeria-overlay"></div>
+
+            <div class="galeria-info">
+
+                <h3>
+                    Curso de pastas
+                </h3>
+
+                <a
+                    href="https://webdisponible.my.canva.site/taller-6"
+                    class="btn-galeria"
+                >
+                    Ver curso
+                </a>
+
+            </div>
+
+        </div>
+        <div class="galeria-card reveal-card">
+
+            <img src="{% static 'vino.jpeg' %}" alt="">
+
+            <div class="galeria-overlay"></div>
+
+            <div class="galeria-info">
+
+                <h3>
+                    Elaboración de vinos
+                </h3>
+
+                <a
+                    href="https://webdisponible.my.canva.site/taller-7"
+                    class="btn-galeria"
+                >
+                    Ver curso
+                </a>
+
+            </div>
+
+        </div>
     </div>
 
 </section>
@@ -1129,7 +1220,7 @@ section {
 
         <div class="mapa reveal-card">
 
-            <iframe 
+            <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.605491513043!2d-57.9346347!3d-34.916348600000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e61990a84ccd%3A0x861e68c2edc635d3!2sIMG%20ACADEMIA%20CULINARIA%20ARGENTINA!5e0!3m2!1ses!2sar!4v1777053356396!5m2!1ses!2sar"
                 allowfullscreen=""
                 loading="lazy">
@@ -1285,3 +1376,4 @@ revealElements.forEach((el) => observer.observe(el));
 
 </body>
 </html>
+
