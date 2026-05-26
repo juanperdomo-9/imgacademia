@@ -13,6 +13,7 @@
         background: #def2c3;
         color: #5f7f5f;
         overflow-x: hidden;  
+        scroll-behavior: smooth;
     }
 
     .container {
@@ -757,6 +758,46 @@
         font-size: 20px;
         text-align: left;
     }
+
+    @media (max-width: 768px) {
+
+        .galeria-overlay {
+
+            position: static;
+            opacity: 1 !important;
+            background: transparent;
+            padding: 16px 0 0;
+
+        }
+
+        .galeria-card {
+
+            background: #5f7f5f;
+
+        }
+
+        .galeria-info {
+
+            position: relative;
+
+        }
+
+        .btn-galeria {
+
+            display: inline-block;
+
+            background: #def2c3;
+            color: #5f7f5f;
+
+            width: calc(100% - 40px);
+
+            text-align: center;
+
+            margin-bottom: 20px;
+
+        }
+
+    }
 </style>
 </head>
 
@@ -840,7 +881,7 @@
         <div class="item">Acompañamiento cercano en cada etapa de la cursada.</div>
         <div class="item">La cocina como punto de encuentro, no solo de aprendizaje.</div>
         <div class="item">Y al final de cada clase… una gran mesa para degustar, charlar y disfrutar lo hecho.</div>
-        <a href="https://webdisponible.my.canva.site/copia-de-cursos-disponibles" class="btn-cursos" target="_blank">
+        <a href="#cursos" class="btn-cursos">
             CURSOS DISPONIBLES
         </a>
         <img src="{% static 'img2.png' %}">
@@ -849,7 +890,7 @@
 </section>
 
 <!-- GALERIA CURSOS -->
-<section class="galeria-cursos seccion-separada">
+<section id="cursos" class="galeria-cursos seccion-separada">
 
     <h2>NUESTROS CURSOS</h2>
 
@@ -906,7 +947,7 @@
                 <h3>Iniciacion a la gastronomia</h3>
             </div>
             <div class="galeria-overlay">
-                <a href="#" class="btn-galeria">Ver curso</a>
+                <a href="https://webdisponible.my.canva.site/taller-8" class="btn-galeria">Ver curso</a>
             </div>
         </div>
 
@@ -1117,7 +1158,7 @@
                 </a>
 
                 <a
-                    href="#"
+                    href="#cursos"
                     style="
                         color: #5f7f5f;
                         text-decoration: none;
@@ -1132,7 +1173,7 @@
                 </a>
 
                 <a
-                    href="#"
+                    href="https://wa.me/542214093007"
                     style="
                         color: #5f7f5f;
                         text-decoration: none;
