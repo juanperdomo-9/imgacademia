@@ -965,7 +965,7 @@ section{
     min-height:100%;
 
     object-fit:cover;
-    object-position:center;
+    object-position:top center;
 
     opacity:0;
 
@@ -986,7 +986,26 @@ section{
     transform:scale(1);
 }
 
+@media(max-width:768px){
 
+   .slider-cursos{
+
+        height:auto;
+        aspect-ratio:4/5;
+        border-radius:24px;
+
+        margin:50px auto 0;
+
+        box-shadow:
+        0 20px 60px rgba(0,0,0,.08),
+        0 8px 24px rgba(95,127,95,.05);
+    }
+
+    .slider-img{
+        object-position:top;
+    }
+
+}
 
 </style>
 <nav class="navbar">
